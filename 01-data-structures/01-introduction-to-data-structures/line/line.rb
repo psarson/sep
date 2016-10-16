@@ -9,26 +9,36 @@ class Line
   end
 
   def join(person)
+    members.push(person)
   end
 
   def leave(person)
+    members.delete(person).to_i
+    return members
   end
 
   def front
+    members.first
   end
 
   def middle
+    memIndex = (members.length/2.to_f).ceil
+    members.fetch(memIndex)
   end
 
   def back
+    members.last
   end
 
   def search(person)
+    memSearch = members.index(person)
+    members.fetch(memSearch)
   end
 
   private
 
   def index(person)
+    members.index(person)
   end
 
 end
