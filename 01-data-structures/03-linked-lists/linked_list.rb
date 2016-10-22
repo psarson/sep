@@ -31,6 +31,11 @@ class LinkedList < Node
     end
   end
 
+  def length
+    ary = each.collect {|node| node.data }
+    puts ary.length
+  end
+
   def print
     array = each.collect {|node| node.data }
     $stdout.puts array.join("\n")
@@ -51,5 +56,22 @@ class LinkedList < Node
     return @next if @next == self
     head.remove
   end
+
+  def remove_by_val(data)
+  	node = @next
+  	while node != nil && node.data != data
+	  	node = node.next
+	  end
+	  node.remove
+  end
+
+  def find_by_val(data)
+    node = @next
+  	while node != nil && node.data != data
+      node = node.next
+	  end
+	    return node.data
+  end
+
 
 end

@@ -1,0 +1,20 @@
+# 1
+no. of iterations: 10_000
+
+                                   user     system      total        real
+initialize linked_list        0.010000   0.000000   0.010000 (  0.002812)
+initialize array              0.000000   0.000000   0.000000 (  0.006667)
+
+#2
+
+
+                                  user     system      total        real
+  Array, Middle Value:        0.000000   0.000000   0.000000 (  0.000596)
+  LinkedList, Middle Value:   0.010000   0.000000   0.010000 (  0.000739)
+  [Finished in 0.066s]
+
+#3
+
+                                      user     system     total         real
+      Array, Remove Middle Value  0.000000   0.000000   0.000000 (  0.000080)
+LinkedList, Remove Middle Value:  0.000000   0.000000   0.000000 (  0.000570)
