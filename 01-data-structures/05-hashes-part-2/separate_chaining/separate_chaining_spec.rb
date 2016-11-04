@@ -1,5 +1,6 @@
 include RSpec
-
+require_relative 'node'
+require_relative 'linked_list'
 require_relative 'separate_chaining'
 
 RSpec.describe SeparateChaining, type: Class do

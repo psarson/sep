@@ -87,4 +87,6 @@ class SeparateChaining
 
     @items = new_items
   end
+
+  #Prints all values in hash
 end
