@@ -1,5 +1,5 @@
 include RSpec
-
+require_relative 'node'
 require_relative 'binary_search_tree'
 
 RSpec.describe BinarySearchTree, type: Class do
