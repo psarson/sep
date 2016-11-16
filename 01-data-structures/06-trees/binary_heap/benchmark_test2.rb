@@ -1,12 +1,15 @@
 require 'benchmark'
 require_relative 'min_binary_heap'
 
-heap2 = MinBinaryHeap.new
-j = [rand(100), rand(100)]
-l = ["apple", rand(100)]
-(1..100000).each {|j| heap2.insert(j)}
-heap2.insert(l)
+heap = MinBinaryHeap.new
+i = 0
+j = 0
+string = 0
+while i < 10000
+   heap.insert([(string += 1).to_s, j += 1])
+   i += 1
+end
 
 Benchmark.bm do |x|
-  x.report ("find") {heap2.find("apple")}
+  x.report ("find") {heap.find("500")}
 end
