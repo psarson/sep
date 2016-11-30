@@ -96,18 +96,18 @@ RSpec.describe BinarySearchTree, type: Class do
     end
   end
 
-  describe "#delete(data)" do
+  describe "#delete(data)" do#
     it "handles nil gracefully" do
       expect(tree.delete(root, nil)).to eq nil
     end
 
-    it "properly deletes a left node" do
+    it "properly deletes a left node" do #
       tree.insert(root, hope)
       tree.delete(root, hope.title)
       expect(tree.find(root, hope.title)).to be_nil
     end
 
-    it "properly deletes a left-left node" do
+    it "properly deletes a left-left node" do#
       tree.insert(root, braveheart)
       tree.insert(root, pacific_rim)
       tree.delete(root, pacific_rim.title)

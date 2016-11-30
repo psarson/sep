@@ -1,5 +1,4 @@
 require_relative 'node'
-#require_relative 'linked_list'
 
 class BinarySearchTree
   attr_accessor :root
@@ -42,19 +41,13 @@ class BinarySearchTree
   def delete(root, data)
     return nil if data == nil
     node = find(root, data)
-    node.title = nil
+    node = nil
+    return
   end
 
   # Recursive Breadth First Search
-  def get_kids(data)
-    kids = Array.new
-      kids.push(data)
-      kids.push(root.left) if root.left != nil
-      kids.push(root.right) if root.left != nil
-    p kids
-  end
 
-  def level_order(root=@root, &block)
+  def breadth_first(root=@root, &block)
     queue = Array.new
     queue << root
     until queue.empty?
@@ -68,7 +61,7 @@ class BinarySearchTree
 
 
   def printf(children=nil)
-    level_order
+    breadth_first
   end
 
 
