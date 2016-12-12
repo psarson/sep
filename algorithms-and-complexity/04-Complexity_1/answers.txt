@@ -1,0 +1,66 @@
+1)
+	An algorithm that has O(2^n)
+
+	An algorithm has has O(1)
+2)
+	The best case scenario of (any?) search is when the first iteration, or guess
+	returns the desired number.  Therefore the best case scenario is Omega-1 or constant
+	time.
+
+3)
+	The “worst case” in a search is when all elements have been eliminated, save the
+	the one your looking for. Since a binary array works by halving the number of elements
+	in the array with each iteration, the eventual number of iterations equals the log of the
+	number of elements in the array.
+		ex.
+			In an array of 50 items it would take a total of six iterations to find a given element.
+			In an array of 25 items it would a take a total of five iterations to find a given element.
+
+4)
+	Suppose the binary search was to search for an item in an array of one million. The number of iterations
+	it would take in the worst case scenario here is 20, while the best, brightest, sunniest case would be
+	just one humble iteration.
+
+	In the event that we wanted to get the full picture (the average of the best	and the worst cases), we would let n = 1 define the lowest boundary of our set, while O(log n) would define
+	the upper boundary, to calculate the middle distance, all one needs to do is divide the number of items in
+	said set by half (n / 2).
+
+
+
+	In the case of our million strong array, however, the assigned constant n/2 fails to significantly impact
+	the total number of iterations.
+		ex.
+			log2 500, 000 equals (roughly) 19
+			log2 1,000,000 equals (roughly) 20
+
+	Therefore, the bounded case scenario is expressed as theta(log n).
+
+5)
+	see attachment
+
+6)
+	For the attached graph, as n approaches infinity, (lim n -> infinity), f(log n) = n
+
+7)
+	The big O of the attached graph is O(log n)
+
+8)
+    def linear_search_iterator(array)
+      iterations = []
+      array.each_with_index do |ary, index|
+         target = ary[-1]
+         ary.each_with_index do |element, sub_index|
+            if target == element
+              iterations.push(sub_index + 1)
+            end
+         end
+       end
+       p iterations
+    end
+
+  9)   What is the Big-O of binary search?
+        f(log n)
+  10)  What is the Big-Ω of binary search?
+        f(n)
+  11)  What is the Big-Ө of binary search?
+        f(log n)
