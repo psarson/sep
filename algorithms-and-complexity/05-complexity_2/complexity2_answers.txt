@@ -1,0 +1,90 @@
+What are the Big O’s for the following algorithms?
+
+1)
+	def goodbye_world(n)
+ 	  puts "Goodbye World! #{n}"
+	end
+
+	Since this algorithm will take the same amount of time to execute
+	it will always operate in constant time O(1)
+
+
+2)
+	def find_largest(collection)
+ 	  largest = collection[0]
+    collection.length.times do |i|
+   	  if collection[i] >= largest
+     	  largest = collection[i]
+   	  end
+ 	  end
+ 	  largest
+	end
+
+	Since this the number of operations depends on the size of the collection,
+  this algorithm works in linear time, O(n).
+
+3)
+	def find_largest(collection)
+ 	  largest = collection[0][0]
+    collection.length.times do |i|
+   	  subcollection = collection[i]
+   		subcollection.length.times do |i|
+     		if subcollection[i] >= largest
+          largest = subcollection[i]
+     		 end
+   		end
+ 	  end
+    largest
+   end
+
+	There are two potential Big-O’s to this algorithm. Since the sizes of each
+  given array are independent of one another, the Big O can be expressed as either
+  O(n * m) if the array’s are of unlike sizes, or O(n^2) if the arrays are of uniform size.
+
+4)
+     def numbers(n)
+      if (n == 0)
+       return 0
+      elsif (n == 1)
+        return 1
+      else
+        return numbers(n-1) + numbers(n-2)
+      end
+    end
+
+    This is an additive recursive algorithm, that is, with every operation, it
+    builds off of the output of each previous operation. Unlike recursive algorithms
+    found in a binary tree, which reduces the number of potential operations by
+    n/2 each operation, this algorithm expands the number of operations. In a
+    worst case analysis, this algorithm functions in exponential time.
+
+
+
+
+5)    def iterative(n)
+     	  num1 = 0
+     	  num2 = 1
+
+     	  i = 0
+     	  while i < n-1
+       	  tmp = num1 + num2
+          num1 = num2
+          num2 = tmp
+          i+=1
+        end
+
+        num2
+      end
+
+	Once again, the number of operations preformed increases with the size of n
+  on a 1:1 ratio, or linear time O(n).
+
+
+6)   (quick sort)
+
+	In the case of a quick sort algorithm, one can inuit the Big O as O(n log n). At its most basic
+	a quick sort preforms two key operations: a double loop to determine the location of the pivot
+  and a recursive call to both sides of the pivot. The double loop can be expressed as O(n * 2),
+  while the recursion can be expressed as O(log n), since it is reducing the number of possible
+  operations with each operation. Combining the two gives us O(n log n), since the constant 2
+  is not a significant number as we approach infinity.
