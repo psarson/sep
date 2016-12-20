@@ -1,0 +1,8 @@
+#Find the Big-O of each version
+
+Both version's work in O(n log n^2) time, as there is no known algorithm that
+would make it any easier to sort an unsorted array of unsorted arrays. The
+key difference between these two algorithm's is the memory - version two applies
+merge sort, which as a recursive function is ultimately
+bound to the limits of the call-stack. Version three solves this by using heap-sort
+as its sorting mechanism.
