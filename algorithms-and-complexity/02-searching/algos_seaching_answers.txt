@@ -1,0 +1,49 @@
+1 . Given the alphabetically sorted collection in this checkpoint,
+how many iterations would it take to find the value G using linear search?
+
+Since G is the 7th letter of the alphabet, and an index of 6, it would take
+six iterations from A (First) and 17 iterations from Z (Last)
+
+2. Given the alphabetically sorted collection in this checkpoint, how many
+iterations would it take to find the value G using binary search?
+
+Four, however, the number of iterations is not dependent on the targets index in the array.
+At every iteration the binary search divides the total number of elements to search by two.
+
+3. Calculate fib(10), fib(11), fib(12) by hand.
+
+fib(10)
+
+1 1 2 3 5 8 13 21 34 55
+
+fib(11)
+
+1 1 2 3 5 8 13 21 34 55 89
+
+fib(12)
+
+1 1 2 3 5 8 13 21 34 55 89 144
+
+4. Given an unsorted collection of a million items, which algorithm would
+you choose between linear search and binary search? Would you use an iterative
+or recursive solution? Explain your reasoning.
+
+  linear - A binary search evaluates from the middle value of a collection,
+  checking to left or right of an array. This is based on the value of the target compared
+  to the value of the middle index. Given an unsorted array, a target with a smaller value
+  but larger index number would be lost on the first iteration.
+
+  iterative - While recursion is theoretically capable making an infinite number of computations,
+  it is forever limited by the available space in the call stack. Therefore in the case of large
+  numbers, the time advantage of recursion is nullified by an overwhelmed call stack.
+
+5. Given a sorted collection of a million items, which algorithm would
+you choose between linear search and binary search? Would you use an
+iterative or recursive solution? Explain your reasoning.
+
+  binary - Put simply, using a worst case scenario it would take 19 iterations using binary to find
+  a given element in a sorted collection of a million. Compare and contrast to the million iterations a linear search
+  would have to run on the same collection.
+
+  recursive - Now that we are dealing with smaller numbers, the time advantage
+  of recursion makes it the obvious choice. 
