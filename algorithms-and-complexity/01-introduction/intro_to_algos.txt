@@ -1,0 +1,74 @@
+Calculate A Tip
+
+DEF TIP(p, t)
+
+  IF t < 20
+    SET t to 20
+    PRINT Don't be a jerk
+  END IF
+
+  CALCULATE p x t / 100, ASSIGN to tip
+  RETURN tip
+
+END DEF
+
+Determine what to wear
+
+DEF YOUR_CLOSET(weather, work)
+    SET clothes to naked
+
+    READ weather
+
+    READ work
+
+    CASE weather OF
+      cold : SET cold to true
+      precipitating : SET precipitating to true
+      sunny : SET sunny to true
+      warm : SET warm to true
+      OTHERS:
+      ASSIGN clothes to pajamas
+    END CASE
+
+    CASE work OF
+      today : SET work to true
+      tomorrow : SET work to false
+      OTHERS
+      ASSIGN work to false
+    END CASE
+
+    UNTIL clothes does not equal naked
+      IF cold AND you have to work today
+        ASSIGN clothes to jeans, button up shirt, hardshell jacket
+      ELSE IF you don't have to work today
+        ASSIGN clothes to pajamas
+      END IF
+    END LOOP
+
+END DEF
+
+Get to Work
+
+  DEF GET TO WORK(t)
+    IF I am at work already
+      RETURN nil
+
+    ELSE
+
+      SET Time it takes to get from bed to shower to ten minutes
+      SET Shower to ten minutes
+      SET Basic hygiene to five minutes
+      SET Commute to twenty minutes
+
+      SET Minutes Late to zero
+
+      WHILE I am still in bed
+        IF alarm is true
+        READ the clock next to my bed
+          CALCULATE time it takes to brush teeth and shower
+            IF I like my odds
+              CALCULATE Minutes Late plus five, ASSIGN to Minutes Late
+            END IF
+         END IF
+      END WHILE
+  END DEF
