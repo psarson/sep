@@ -1,4 +1,4 @@
-require 'bloc_works'
+require "bloc_works"
 
 module BlocBooks
   class Application < BlocWorks::Application
